@@ -10,7 +10,7 @@ export function HomePage() {
 
   return (
     <main className="app-shell">
-      <section className="relative mx-auto flex min-h-dvh w-full max-w-7xl flex-col gap-8 px-4 py-5 sm:px-6 sm:py-6 lg:px-8">
+      <section className="relative mx-auto flex min-h-dvh w-full max-w-[92rem] flex-col gap-8 px-4 py-5 sm:px-6 sm:py-6 lg:px-10 xl:px-12 2xl:max-w-[104rem]">
         <nav className="animate-soft-in flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img alt="LinkPilot" className="brand-mark h-10 w-10 rounded-md" src="/logo.svg" />
@@ -28,23 +28,23 @@ export function HomePage() {
           </a>
         </nav>
 
-        <div className="grid flex-1 items-center gap-8 py-6 sm:py-8 lg:grid-cols-[minmax(0,1fr)_minmax(380px,430px)] lg:gap-12">
+        <div className="grid flex-1 items-center gap-8 py-6 sm:py-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(390px,460px)] lg:gap-14 xl:gap-20">
           <div className="animate-fade-up grid gap-6">
             <div className="grid gap-4">
               <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 text-sm text-primary shadow-sm">
                 <Sparkles className="h-4 w-4 text-accent" />
                 Enlaces listos para compartir
               </div>
-              <h1 className="hero-title max-w-3xl text-4xl font-semibold leading-tight tracking-normal sm:text-5xl lg:text-6xl">
+              <h1 className="hero-title max-w-4xl text-4xl font-semibold leading-tight tracking-normal sm:text-5xl lg:text-6xl xl:text-7xl">
                 Acorta URLs con una experiencia limpia y confiable.
               </h1>
-              <p className="max-w-2xl text-base leading-7 text-muted-foreground">
+              <p className="max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
                 Genera enlaces cortos, copia el resultado al instante y usa una ruta de espera antes de enviar al
                 visitante al destino final.
               </p>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-3">
+            <div className="grid gap-3 sm:grid-cols-3 xl:max-w-5xl">
               {[
                 { label: "Validacion", value: "HTTP/HTTPS", helper: "Solo URLs publicas", icon: ShieldCheck },
                 { label: "Redirect", value: "5 segundos", helper: "Pantalla de espera", icon: Clock3 },
@@ -62,19 +62,6 @@ export function HomePage() {
                   </div>
                 );
               })}
-            </div>
-
-            <div className="grid max-w-xl grid-cols-3 gap-3 border-t border-white/10 pt-6 sm:gap-6">
-              {[
-                ["12k+", "Links creados"],
-                ["99.9%", "Uptime"],
-                ["<50ms", "Redirect"],
-              ].map(([value, label]) => (
-                <div key={label}>
-                  <p className="text-xl font-semibold tracking-normal sm:text-2xl">{value}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">{label}</p>
-                </div>
-              ))}
             </div>
           </div>
 
