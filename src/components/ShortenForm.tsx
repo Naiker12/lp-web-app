@@ -40,7 +40,7 @@ export function ShortenForm({ loading, onSubmit }: ShortenFormProps) {
         <Link2 className="pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-muted-foreground" />
         <Input
           aria-label="URL para acortar"
-          className="h-14 rounded-md pl-12 text-base"
+          className="h-14 rounded-md border-white/10 bg-white/[0.04] pl-12 text-base text-foreground shadow-inner shadow-black/20 placeholder:text-zinc-500 focus-visible:border-primary/40 focus-visible:ring-primary/25"
           disabled={loading}
           onChange={(event) => setUrl(event.target.value)}
           placeholder="https://tu-dominio.com/recurso"
@@ -49,7 +49,7 @@ export function ShortenForm({ loading, onSubmit }: ShortenFormProps) {
         />
       </div>
       {validationError ? <p className="text-sm text-destructive">{validationError}</p> : null}
-      <Button className="h-12 w-full transition-all hover:shadow-lg hover:shadow-primary/20 sm:w-fit" disabled={loading} type="submit">
+      <Button className="h-12 w-full transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/20 sm:w-fit" disabled={loading} type="submit">
         {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Link2 className="h-4 w-4" />}
         {loading ? "Acortando..." : "Acortar enlace"}
       </Button>

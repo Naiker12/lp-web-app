@@ -10,8 +10,8 @@ export function HomePage() {
 
   return (
     <main className="app-shell">
-      <section className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-10 px-4 py-6 sm:px-6 lg:px-8">
-        <nav className="flex items-center justify-between">
+      <section className="relative mx-auto flex min-h-dvh w-full max-w-7xl flex-col gap-8 px-4 py-5 sm:px-6 sm:py-6 lg:px-8">
+        <nav className="animate-soft-in flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img alt="LinkPilot" className="brand-mark h-10 w-10 rounded-md" src="/logo.svg" />
             <div>
@@ -20,7 +20,7 @@ export function HomePage() {
             </div>
           </div>
           <a
-            className="inline-flex h-10 items-center gap-2 rounded-md border border-white/10 bg-card/70 px-3 text-sm font-medium text-primary shadow-sm transition-colors hover:bg-secondary"
+            className="inline-flex h-10 items-center gap-2 rounded-md border border-white/10 bg-card/70 px-3 text-sm font-medium text-primary shadow-sm transition-colors hover:bg-secondary max-[420px]:h-9 max-[420px]:px-2 max-[420px]:text-xs"
             href="/short/demo"
           >
             <Clock3 className="h-4 w-4" />
@@ -28,14 +28,14 @@ export function HomePage() {
           </a>
         </nav>
 
-        <div className="grid flex-1 items-center gap-10 lg:grid-cols-[1fr_420px]">
-          <div className="grid gap-6">
+        <div className="grid flex-1 items-center gap-8 py-6 sm:py-8 lg:grid-cols-[minmax(0,1fr)_minmax(380px,430px)] lg:gap-12">
+          <div className="animate-fade-up grid gap-6">
             <div className="grid gap-4">
               <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 text-sm text-primary shadow-sm">
                 <Sparkles className="h-4 w-4 text-accent" />
                 Enlaces listos para compartir
               </div>
-              <h1 className="hero-title max-w-3xl text-4xl font-semibold tracking-normal sm:text-6xl">
+              <h1 className="hero-title max-w-3xl text-4xl font-semibold leading-tight tracking-normal sm:text-5xl lg:text-6xl">
                 Acorta URLs con una experiencia limpia y confiable.
               </h1>
               <p className="max-w-2xl text-base leading-7 text-muted-foreground">
@@ -52,7 +52,7 @@ export function HomePage() {
               ].map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div className="rounded-md border border-white/10 bg-card/70 p-4 shadow-sm" key={item.label}>
+                  <div className="hover-lift rounded-md border border-white/10 bg-card/70 p-4 shadow-sm" key={item.label}>
                     <div className="flex h-9 w-9 items-center justify-center rounded-md border border-primary/25 bg-primary/10">
                       <Icon className="h-5 w-5 text-primary" />
                     </div>
@@ -64,22 +64,22 @@ export function HomePage() {
               })}
             </div>
 
-            <div className="grid max-w-xl grid-cols-3 gap-6 border-t border-white/10 pt-6">
+            <div className="grid max-w-xl grid-cols-3 gap-3 border-t border-white/10 pt-6 sm:gap-6">
               {[
                 ["12k+", "Links creados"],
                 ["99.9%", "Uptime"],
                 ["<50ms", "Redirect"],
               ].map(([value, label]) => (
                 <div key={label}>
-                  <p className="text-2xl font-semibold tracking-normal">{value}</p>
+                  <p className="text-xl font-semibold tracking-normal sm:text-2xl">{value}</p>
                   <p className="mt-1 text-xs text-muted-foreground">{label}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="grid gap-4">
-            <Card className="glass-card border-primary/20">
+          <div className="animate-fade-up delay-200 grid gap-4">
+            <Card className="glass-card hover-lift border-primary/20">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Zap className="h-4 w-4 text-accent" />

@@ -40,7 +40,7 @@ export function ResultCard({ code, shortUrl, originalUrl }: ResultCardProps) {
 
   return (
     <>
-    <Card className="glass-card border-primary/30 bg-primary/5">
+    <Card className="glass-card animate-fade-up border-primary/30 bg-primary/5">
       <CardHeader className="flex-row items-center gap-3 space-y-0">
         <div className="flex h-10 w-10 items-center justify-center rounded-md bg-primary text-primary-foreground">
           <Link2 className="h-5 w-5" />
@@ -57,18 +57,18 @@ export function ResultCard({ code, shortUrl, originalUrl }: ResultCardProps) {
           </a>
           <p className="mt-2 line-clamp-2 break-all text-sm text-muted-foreground">{originalUrl}</p>
         </div>
-        <div className="flex flex-col gap-2 sm:flex-row">
-          <Button onClick={handleCopy} type="button">
+        <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+          <Button className="w-full sm:w-auto" onClick={handleCopy} type="button">
             {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
             {copied ? "Copiado" : "Copiar"}
           </Button>
-          <Button asChild type="button" variant="outline">
+          <Button asChild className="w-full sm:w-auto" type="button" variant="outline">
             <a href={shortUrl} rel="noreferrer" target="_blank">
               <ExternalLink className="h-4 w-4" />
               Abrir
             </a>
           </Button>
-          <Button asChild type="button" variant="outline">
+          <Button asChild className="w-full sm:w-auto" type="button" variant="outline">
             <a href={`${analyticsBaseUrl.replace(/\/$/, "")}/stats/${encodeURIComponent(code)}`} rel="noreferrer" target="_blank">
               <BarChart3 className="h-4 w-4" />
               Analytics
@@ -78,7 +78,7 @@ export function ResultCard({ code, shortUrl, originalUrl }: ResultCardProps) {
       </CardContent>
     </Card>
     <div
-      className={`fixed bottom-5 right-5 z-50 rounded-md border border-white/10 bg-card px-4 py-3 text-sm font-medium shadow-2xl transition-all ${
+      className={`fixed bottom-5 left-4 right-4 z-50 rounded-md border border-white/10 bg-card px-4 py-3 text-sm font-medium shadow-2xl transition-all sm:left-auto sm:right-5 ${
         copied ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-8 opacity-0"
       }`}
     >
