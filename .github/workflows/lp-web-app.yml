@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - ".github/workflows/lp-web-app.yml"
+      - ".env.example"
       - "src/**"
       - "index.html"
       - "package.json"

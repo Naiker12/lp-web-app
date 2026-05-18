@@ -43,7 +43,7 @@ export function ShortenForm({ loading, onSubmit }: ShortenFormProps) {
           className="h-12 pl-10 text-base"
           disabled={loading}
           onChange={(event) => setUrl(event.target.value)}
-          placeholder="https://ejemplo.com/recurso"
+          placeholder="https://..."
           type="url"
           value={url}
         />
