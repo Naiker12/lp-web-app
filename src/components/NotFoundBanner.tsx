@@ -10,9 +10,10 @@ type NotFoundBannerProps = {
 
 export function NotFoundBanner({ codigo }: NotFoundBannerProps) {
   return (
-    <section className="flex min-h-screen items-center justify-center px-4 py-8">
-      <Card className="w-full max-w-lg border-destructive/40">
+    <section className="app-shell flex min-h-screen items-center justify-center px-4 py-8">
+      <Card className="w-full max-w-lg border-destructive/40 shadow-xl shadow-destructive/5">
         <CardContent className="flex flex-col items-center gap-4 p-8 text-center">
+          <img alt="LinkPilot" className="brand-mark h-12 w-12 rounded-md" src="/logo.svg" />
           <div className="flex h-14 w-14 items-center justify-center rounded-full bg-destructive/10">
             <AlertTriangle className="h-7 w-7 text-destructive" />
           </div>

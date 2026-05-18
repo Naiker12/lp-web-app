@@ -1,4 +1,4 @@
-import { Check, Copy, ExternalLink } from "lucide-react";
+import { Check, Copy, ExternalLink, Link2 } from "lucide-react";
 import { useState } from "react";
 
 import { Button } from "./ui/button";
@@ -36,16 +36,19 @@ export function ResultCard({ shortUrl, originalUrl }: ResultCardProps) {
   }
 
   return (
-    <Card className="border-primary/30">
-      <CardHeader>
+    <Card className="border-primary/30 bg-primary/5 shadow-sm">
+      <CardHeader className="flex-row items-center gap-3 space-y-0">
+        <div className="flex h-10 w-10 items-center justify-center rounded-md bg-primary text-primary-foreground">
+          <Link2 className="h-5 w-5" />
+        </div>
         <CardTitle>URL corta generada</CardTitle>
       </CardHeader>
       <CardContent className="grid gap-4">
-        <div className="rounded-md border bg-muted/60 p-3">
-          <a className="break-all font-medium text-primary hover:underline" href={shortUrl}>
+        <div className="rounded-md border bg-card p-4">
+          <a className="break-all text-lg font-semibold text-primary hover:underline" href={shortUrl}>
             {shortUrl}
           </a>
-          <p className="mt-2 line-clamp-2 break-all text-xs text-muted-foreground">{originalUrl}</p>
+          <p className="mt-2 line-clamp-2 break-all text-sm text-muted-foreground">{originalUrl}</p>
         </div>
         <div className="flex flex-col gap-2 sm:flex-row">
           <Button onClick={handleCopy} type="button">

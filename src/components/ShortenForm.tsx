@@ -37,13 +37,13 @@ export function ShortenForm({ loading, onSubmit }: ShortenFormProps) {
   return (
     <form className="grid gap-3" onSubmit={handleSubmit}>
       <div className="relative">
-        <Link2 className="pointer-events-none absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+        <Link2 className="pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-muted-foreground" />
         <Input
           aria-label="URL para acortar"
-          className="h-12 pl-10 text-base"
+          className="h-14 rounded-md pl-12 text-base"
           disabled={loading}
           onChange={(event) => setUrl(event.target.value)}
-          placeholder="https://..."
+          placeholder="https://tu-dominio.com/recurso"
           type="url"
           value={url}
         />
