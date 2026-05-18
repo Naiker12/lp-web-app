@@ -49,9 +49,9 @@ export function ShortenForm({ loading, onSubmit }: ShortenFormProps) {
         />
       </div>
       {validationError ? <p className="text-sm text-destructive">{validationError}</p> : null}
-      <Button className="h-12 w-full sm:w-fit" disabled={loading} type="submit">
+      <Button className="h-12 w-full transition-all hover:shadow-lg hover:shadow-primary/20 sm:w-fit" disabled={loading} type="submit">
         {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Link2 className="h-4 w-4" />}
-        Acortar
+        {loading ? "Acortando..." : "Acortar enlace"}
       </Button>
     </form>
   );

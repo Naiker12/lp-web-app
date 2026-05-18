@@ -26,6 +26,7 @@ env:
   CF_DIST_WEBAPP: E2Z51Q1QOKFW73
   VITE_API_URL: https://bz3sk0ouyl.execute-api.us-east-1.amazonaws.com
   VITE_BASE_SHORT_URL: https://dq3f4b1yhm95q.cloudfront.net
+  VITE_ANALYTICS_URL: https://d1gk8s6mgxls13.cloudfront.net
 
 jobs:
   deploy:
@@ -54,6 +55,7 @@ jobs:
         env:
           VITE_API_URL: ${{ env.VITE_API_URL }}
           VITE_BASE_SHORT_URL: ${{ env.VITE_BASE_SHORT_URL }}
+          VITE_ANALYTICS_URL: ${{ env.VITE_ANALYTICS_URL }}
 
       - name: Validate AWS secrets
         env:
