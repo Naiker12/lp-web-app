@@ -69,28 +69,18 @@ export async function shortenUrl(url: string): Promise<ShortenResponse> {
 }
 
 export async function resolveCode(codigo: string): Promise<string> {
-  const redirectUrl = new URL(`/${encodeURIComponent(codigo)}`, apiUrl).toString();
-  const response = await fetch(redirectUrl, { redirect: "manual" });
+  const resolveUrl = new URL(`/${encodeURIComponent(codigo)}`, apiUrl);
+  resolveUrl.searchParams.set("resolve", "true");
+
+  const response = await fetch(resolveUrl);
 
   if (response.status === 404) {
     throw new ApiError("Este enlace no existe.", 404);
-  }
-
-  if (response.type === "opaqueredirect") {
-    return redirectUrl;
-  }
-
-  if (response.status >= 300 && response.status < 400) {
-    return response.headers.get("Location") ?? redirectUrl;
-  }
-
-  if (response.ok && response.redirected) {
-    return response.url;
   }
 
   if (!response.ok) {
     throw await readError(response, "No se pudo resolver este enlace.");
   }
 
-  return redirectUrl;
+  return new URL(`/${encodeURIComponent(codigo)}`, apiUrl).toString();
 }
