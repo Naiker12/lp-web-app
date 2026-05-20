@@ -28,7 +28,7 @@ export function HomePage() {
           </a>
         </nav>
 
-        <div className="grid flex-1 items-center gap-8 py-6 sm:py-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(390px,460px)] lg:gap-14 xl:gap-20">
+        <div className="grid flex-1 items-center gap-8 py-6 sm:py-8 lg:grid-cols-[minmax(0,1fr)_minmax(460px,560px)] lg:gap-8 xl:gap-10">
           <div className="animate-fade-up grid gap-6">
             <div className="grid gap-4">
               <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 text-sm text-primary shadow-sm">
@@ -43,18 +43,17 @@ export function HomePage() {
                 visitante al destino final.
               </p>
             </div>
-
           </div>
 
-          <div className="animate-fade-up delay-200 grid gap-4">
+          <div className="animate-fade-up delay-200 grid w-full max-w-[560px] gap-4 justify-self-start">
             <Card className="glass-card hover-lift border-primary/20">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Zap className="h-4 w-4 text-accent" />
+              <CardHeader className="p-6">
+                <CardTitle className="flex items-center gap-2 text-base">
+                  <Zap className="h-5 w-5 text-accent" />
                   Nuevo enlace
                 </CardTitle>
               </CardHeader>
-              <CardContent className="grid gap-4">
+              <CardContent className="grid gap-5 p-6 pt-0">
                 <ShortenForm loading={loading} onSubmit={shorten} />
                 {error ? <p className="rounded-md border border-destructive/30 bg-destructive/10 p-3 text-sm text-destructive">{error.message}</p> : null}
                 <div className="rounded-md border border-white/10 bg-muted/50 p-3 text-xs leading-5 text-muted-foreground">
