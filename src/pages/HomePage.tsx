@@ -1,4 +1,4 @@
-import { BarChart3, Clock3, ShieldCheck, Sparkles, Zap } from "lucide-react";
+import { Clock3, Sparkles, Zap } from "lucide-react";
 
 import { ResultCard } from "../components/ResultCard";
 import { ShortenForm } from "../components/ShortenForm";
@@ -44,25 +44,6 @@ export function HomePage() {
               </p>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-3 xl:max-w-5xl">
-              {[
-                { label: "Validacion", value: "HTTP/HTTPS", helper: "Solo URLs publicas", icon: ShieldCheck },
-                { label: "Redirect", value: "5 segundos", helper: "Pantalla de espera", icon: Clock3 },
-                { label: "Metricas", value: "por dia", helper: "Dashboard incluido", icon: BarChart3 },
-              ].map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div className="hover-lift rounded-md border border-white/10 bg-card/70 p-4 shadow-sm" key={item.label}>
-                    <div className="flex h-9 w-9 items-center justify-center rounded-md border border-primary/25 bg-primary/10">
-                      <Icon className="h-5 w-5 text-primary" />
-                    </div>
-                    <p className="mt-3 text-sm text-muted-foreground">{item.label}</p>
-                    <p className="mt-1 text-lg font-semibold">{item.value}</p>
-                    <p className="mt-1 text-xs text-muted-foreground">{item.helper}</p>
-                  </div>
-                );
-              })}
-            </div>
           </div>
 
           <div className="animate-fade-up delay-200 grid gap-4">
