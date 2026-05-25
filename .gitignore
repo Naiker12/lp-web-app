@@ -8,3 +8,4 @@ vite-dev*.log
 terraform/.terraform/
 terraform/*.tfstate
 terraform/*.tfstate.*
+terraform/*.tfvars

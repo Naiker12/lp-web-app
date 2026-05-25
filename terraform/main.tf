@@ -6,7 +6,8 @@ locals {
 }
 
 resource "aws_s3_bucket" "web_app" {
-  bucket = var.bucket_name
+  bucket        = var.bucket_name
+  force_destroy = true
 
   tags = local.common_tags
 }
